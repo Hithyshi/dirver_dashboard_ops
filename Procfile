@@ -1,0 +1,1 @@
+web: gunicorn mydashb.wsgi --log-file -
