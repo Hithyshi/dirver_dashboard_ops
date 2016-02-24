@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="/operations/savetotrip/" method="POST">
+{% csrf_token %}  
+  <select name="SelectDriver">
+    {% for driver in drivers %}
+      <option value="{{ driver }}">{{ driver }}</option>
+    {% endfor %}
+  </select>
+  <br><br>
+  <select name="SelectRoute">
+    {% for route in routes %}
+      <option value="{{ route }}">{{ route }}</option>
+    {% endfor %}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+<br><br>
+<br><br>
+<br><br>
+<form action="/operations/savetodriver/" method="POST">
+{% csrf_token %}
+  Driver name:<br>
+  <input type="text" name="name" >
+  <br>
+  phone number:<br>
+  <input type="text" name="number" >
+  <br><br>
+  <input type="submit" value="Add Driver">
+</form> 
+
+
+</body>
+</html>
