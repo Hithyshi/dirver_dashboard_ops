@@ -2,6 +2,10 @@
 <html>
 <body>
 
+<center>
+
+<h1>My OpsBoard</h1>
+
 <form action="/operations/savetotrip/" method="POST">
 {% csrf_token %}  
   <select name="SelectDriver">
@@ -20,7 +24,9 @@
 </form>
 <br><br>
 <br><br>
+<hr>
 <br><br>
+<h2>New Driver?</h2>
 <form action="/operations/savetodriver/" method="POST">
 {% csrf_token %}
   Driver name:<br>
@@ -31,7 +37,7 @@
   <br><br>
   <input type="submit" value="Add Driver">
 </form> 
-
+</center>
 
 </body>
 </html>
