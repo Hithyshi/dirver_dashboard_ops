@@ -39,14 +39,16 @@ def home(request):
 def savetotrip(request):
   the_driver = request.POST["SelectDriver"]
   the_route = request.POST["SelectRoute"]
-
   trip_details=the_driver + "***" + the_route
 
   connection = httplib.HTTPSConnection('api.parse.com', 443)
   connection.connect()
   connection.request('POST', '/1/classes/Trip', json.dumps({
 
-         "name": trip_details
+         "name": trip_details,
+         "routeStr": the_route,
+         "driverStr": the_driver[:-13],
+         "drivernumber": the_driver[-10:]
 
        }), {
          "X-Parse-Application-Id": "IBArnAuw83Th0SfDmF55VdMUgsNXFiL2TuC6qwiC",
